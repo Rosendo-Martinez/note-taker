@@ -7,8 +7,8 @@ const UI = (function () {
         return `
             <div class='note'>
                 <div id='${noteId}'>
-                    <button class='edit-note'><img class='edit-note' src='./images/edit (1).png' alt='edit note icon'></button>
-                    <button class='delete-note'><img class='delete-note' src='./images/delete.png' alt='delete note icon'></button>
+                    <button class='edit-note'><img src='./images/edit (1).png' alt='edit note icon'></button>
+                    <button class='delete-note'><img src='./images/delete.png' alt='delete note icon'></button>
                 </div>
                 <h2 class='note-title'>${noteTitle}</h2>
                 <p class='note-description'>${noteDescription}</p>
