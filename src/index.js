@@ -1,1 +1,3 @@
-console.log('we good?');
+import {UI} from "./UI";
+
+document.addEventListener('DOMContentLoaded', () => {UI.renderNotes()});
