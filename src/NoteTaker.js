@@ -3,7 +3,6 @@ import Note from './Note';
 
 const NoteTaker = (function() {
     let notes = [];
-    createNote('note example', 'do something on this day');
 
     function getNoteIndex(id) {
         for (let i = 0; i < notes.length; i++) {
@@ -24,13 +23,11 @@ const NoteTaker = (function() {
     }
 
     function deleteNote(id) {
-        const noteIndex = getNoteIndex(id);
-        notes.splice(noteIndex,1);
+        notes.splice(getNoteIndex(id),1);
     }
 
     function createNote(title, description, id=uniqid()) {
-        const note = new Note(title, description, id);
-        notes.push(note);
+        notes.push(new Note(title, description, id));
     }
 
     function getNotes() {
