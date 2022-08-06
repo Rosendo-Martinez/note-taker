@@ -69,7 +69,7 @@ const UI = (function () {
         const inputDescriptionValue = formClass === 'edit-note-form' ? note.getDescription() : '';
         return `
             <div class="form-modal-container">
-                <form class="${formClass}" id=${taskId} onsubmit="return false">
+                <form class="${formClass} note-form" id=${taskId} onsubmit="return false">
                     <input type="text" class="note-title-input" name="title" placeholder="title" value="${inputTitleValue}"></input>
                     <textarea class="note-description-input" name="description" placeholder="description...">${inputDescriptionValue}</textarea>
                     <button class="submit-note-button">Submit</button>

@@ -5,11 +5,7 @@
     --note-width: 330px;
     --note-height: 380px;
     font-family: 'Roboto', sans-serif;
-}
-
-img {
-    width: 50px;
-    color: var(--white);
+    --border-amber: 5px solid var(--amber);
 }
 
 body {
@@ -25,33 +21,27 @@ header, main, footer {
     padding: 30px 40px;
 }
 
-header, footer {
-    flex-grow: 0;
-}
-
-main {
-    flex-grow: 1;
-}
-
 /* header */
+
 header {
     display: flex;
     align-items: center;
-    border-bottom: 5px solid var(--amber);
+    border-bottom: var(--border-amber);
 }
 
-img.header-icon {
+.header-icon {
     width: 4.2rem;
     height: 4.2rem;
 }
 
 /* main */
+
 main {
+    flex-grow: 1;
     box-sizing: border-box;
     max-width: 2500px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .notes-container {
@@ -76,7 +66,7 @@ main {
     justify-content: flex-end;
 }
 
-.note-button-container button {
+.edit-note-button, .delete-note-button {
     background-color: var(--amber);
     border: unset;
     margin-left: 10px;
@@ -86,29 +76,29 @@ main {
     display: grid;
 }
 
-.create-note-container button {
+.create-note-button {
     background-color: var(--amber);
     border: unset;
 }
 
-h2.note-title {
+.note-title {
     margin-top: 7px;
     margin-bottom: 15px;
     font-size: 1.3rem;
 }
 
-p.note-description {
+.note-description {
     line-height: 1.4;
     margin: 0;
     font-size: 1rem;
 }
 
-img.edit-note-button-icon, img.delete-note-button-icon {
+.edit-note-button-icon, .delete-note-button-icon {
     width: 40px;
     height: 40px;
 }
 
-img.create-note-button-icon {
+.create-note-button-icon {
     width: 90px;
     height: 90px;
 }
@@ -116,16 +106,16 @@ img.create-note-button-icon {
 /* footer */
 
 footer {
-    border-top: 5px solid var(--amber);
+    border-top: var(--border-amber);
 }
 
-p.copyright-text {
+.copyright-text {
     text-align: center;
     font-size: 0.85rem;
     font-style: italic;
 }
 
-/* form modal */ 
+/* modal */ 
 
 .form-modal-container {
     position: fixed;
@@ -137,7 +127,7 @@ p.copyright-text {
     background-color: rgba(0, 0, 0, 0.671);
 }
 
-.form-modal-container form {
+.note-form {
     box-sizing: border-box;
     width: var(--note-width);
     height: var(--note-height);
@@ -149,17 +139,17 @@ p.copyright-text {
     gap: 15px;
 }
  
-.form-modal-container input, .form-modal-container textarea {
+.note-title-input, .note-description-input {
     background-color: var(--amber);
     counter-reset: var(--black);
     border: unset;
 }
 
-.form-modal-container input {
+.note-title-input {
     font-weight: 700;
 }
 
-.form-modal-container textarea {
+.note-description-input {
     flex-grow: 1;
 }
 
@@ -169,4 +159,3 @@ p.copyright-text {
     border-radius: 20px;
     padding: 10px 0;
 }
-
