@@ -6,7 +6,7 @@ const UI = (function () {
     function getNoteHTML(noteTitle, noteDescription, noteId) {
         return `
             <div class='note'>
-                <div id='${noteId}'>
+                <div id='${noteId}' class='note-button-container'>
                     <button class='edit-note-button'>
                         <img class='edit-note-button-icon' src='./images/edit (1).png' alt='edit note icon'>
                     </button>
@@ -71,7 +71,7 @@ const UI = (function () {
             <div class="form-modal-container">
                 <form class="${formClass}" id=${taskId} onsubmit="return false">
                     <input type="text" class="note-title-input" name="title" placeholder="title" value="${inputTitleValue}"></input>
-                    <input type="text" class="note-description-input" name="description" placeholder="description..." value="${inputDescriptionValue}">
+                    <textarea class="note-description-input" name="description" placeholder="description...">${inputDescriptionValue}</textarea>
                     <button class="submit-note-button">Submit</button>
                 </form>
             </div>

@@ -1,3 +1,172 @@
-img {
-    width: 200px;
+:root {
+    --black: #1B1212;
+    --amber: #FFBF00;
+    --white: #FFFFF0;
+    --note-width: 330px;
+    --note-height: 380px;
+    font-family: 'Roboto', sans-serif;
 }
+
+img {
+    width: 50px;
+    color: var(--white);
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header, main, footer {
+    padding: 30px 40px;
+}
+
+header, footer {
+    flex-grow: 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid var(--amber);
+}
+
+img.header-icon {
+    width: 4.2rem;
+    height: 4.2rem;
+}
+
+/* main */
+main {
+    box-sizing: border-box;
+    max-width: 2500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--note-width));
+    gap: 25px;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+.note {
+    box-sizing: border-box;
+    width: var(--note-width);
+    height: var(--note-height);
+    background-color: var(--amber);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.note-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.note-button-container button {
+    background-color: var(--amber);
+    border: unset;
+    margin-left: 10px;
+}
+
+.create-note-container {
+    display: grid;
+}
+
+.create-note-container button {
+    background-color: var(--amber);
+    border: unset;
+}
+
+h2.note-title {
+    margin-top: 7px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+p.note-description {
+    line-height: 1.4;
+    margin: 0;
+    font-size: 1rem;
+}
+
+img.edit-note-button-icon, img.delete-note-button-icon {
+    width: 40px;
+    height: 40px;
+}
+
+img.create-note-button-icon {
+    width: 90px;
+    height: 90px;
+}
+
+/* footer */
+
+footer {
+    border-top: 5px solid var(--amber);
+}
+
+p.copyright-text {
+    text-align: center;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* form modal */ 
+
+.form-modal-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.671);
+}
+
+.form-modal-container form {
+    box-sizing: border-box;
+    width: var(--note-width);
+    height: var(--note-height);
+    background-color: var(--amber);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+ 
+.form-modal-container input, .form-modal-container textarea {
+    background-color: var(--amber);
+    counter-reset: var(--black);
+    border: unset;
+}
+
+.form-modal-container input {
+    font-weight: 700;
+}
+
+.form-modal-container textarea {
+    flex-grow: 1;
+}
+
+.submit-note-button {
+    background-color: var(--white);
+    border: unset;
+    border-radius: 20px;
+    padding: 10px 0;
+}
+
