@@ -1,4 +1,4 @@
-import {NoteTaker} from "./NoteTaker";
+import { NoteTaker } from "./NoteTaker";
 import { Storage } from "./Storage";
 import Note from "./Note";
 
@@ -46,19 +46,19 @@ const UI = (function () {
     function createNoteAndRenderNewSetOfNotes(title, description) {
         NoteTaker.createNote(title, description);
         renderNotes();
-        Storage.updateLocalStorageNotes(NoteTaker.getNotes());
+        Storage.updateLocalStorageNotes();
     }
 
     function deleteNoteAndRenderNewSetOfNotes(id) {
         NoteTaker.deleteNote(id);
         renderNotes();
-        Storage.updateLocalStorageNotes(NoteTaker.getNotes());
+        Storage.updateLocalStorageNotes();
     }
 
     function editNoteAndRenderNewSetOfNotes(newTitle, newDescription, id) {
         NoteTaker.editNote(id, newTitle, newDescription);
         renderNotes();
-        Storage.updateLocalStorageNotes(NoteTaker.getNotes());
+        Storage.updateLocalStorageNotes();
     }
 
     function renderForm(formClass, taskId='') {
@@ -119,4 +119,4 @@ const UI = (function () {
     return {renderNotes};
 })();
 
-export {UI};
+export { UI };

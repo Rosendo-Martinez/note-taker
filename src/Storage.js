@@ -3,12 +3,12 @@ import { NoteTaker } from "./NoteTaker";
 
 const Storage = (function() {
 
-    const NOTES_KEY = 'notes'
+    const NOTES_KEY = 'notes';
 
     function handleOnPageLoad() {
         const jsonArray = localStorage.getItem(NOTES_KEY);
         if (jsonArray !== null) {
-            renderNotesToNoteTaker(JSON.parse(jsonArray))
+            renderNotesToNoteTaker(JSON.parse(jsonArray));
         }
     }
 
@@ -18,11 +18,11 @@ const Storage = (function() {
         }
     }
 
-    function updateLocalStorageNotes(newNotes) {
-        localStorage.setItem(NOTES_KEY, JSON.stringify(newNotes));
+    function updateLocalStorageNotes() {
+        localStorage.setItem(NOTES_KEY, JSON.stringify(NoteTaker.getNotes()));
     }
 
-    return {handleOnPageLoad, updateLocalStorageNotes}
+    return {handleOnPageLoad, updateLocalStorageNotes};
 })();
 
-export {Storage};
+export { Storage };

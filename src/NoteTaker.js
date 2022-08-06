@@ -41,4 +41,4 @@ const NoteTaker = (function() {
     return {editNote, deleteNote, createNote, getNote, getNotes, setNotes};
 })();
 
-export {NoteTaker};
+export { NoteTaker };
